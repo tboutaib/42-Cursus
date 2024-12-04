@@ -10,13 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int isprint(int c)
+int	ft_isprint(int c)
 {
-        if ( c >= '32' && c <= '126')
-        {
-                return (1);
-        }
-        return (0);
+	if (c >= 32 && c <= 126)
+	{
+		return (1);
+	}
+	return (0);
 }
+
+/* int main()
+{
+	if (ft_isprint('m') == 1)
+  		printf("is print");
+  	else
+  		printf("is not");
+ 	return (0);
+} */

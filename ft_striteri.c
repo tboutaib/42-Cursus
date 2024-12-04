@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tahayssirboutaib12@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 09:01:56 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/11/10 09:01:56 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/11/19 01:21:59 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/11/19 01:21:59 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
+	unsigned int	i;
 
-	if (n == 0)
-		return (0);
+	if (!s || !f)
+		return ;
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (s[i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	return (0);
 }
 
-/* int main()
+/*void function(unsigned int i, char *c)
 {
-	int r;
+    if (i % 2 == 0)
+    {
+        if (*c >= 'A' && *c <= 'Z')
+            *c += 32;
+    }
+    else
+    {
+        if (*c >= 'a' && *c <= 'z')
+            *c -= 32;
+    }
+}
 
-	r = ft_strncmp("Hello", "Hello", 5);
-    printf("Result: %d\n", r);
-	return(0);
-} */
+int	main(void)
+{
+	char s[] = "AbCdF";
+	ft_striteri(s, function);
+	printf("%s\n", s);
+	return (0);
+}*/

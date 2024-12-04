@@ -10,39 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
-#include <stddef.h>
+#include "libft.h"
 
-void bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-        size_t i;
+	size_t	i;
 
-        i = 0;
-        while (i < n)
-        {
-                ((unsigned char *)s) = '0';
-                i++
-        }
-        return (s);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = 0;
+		i++;
+	}
 }
 /*int main()
 {
-    char buffer[10];
-    int i;
+	char buffer[10];
+	int i;
 
-    for (i = 0; i < sizeof(buffer); i++)
-    {
-        buffer[i] = 'A';
-    }
+	for (i = 0; i < sizeof(buffer); i++)
+	{
+		buffer[i] = 'A';
+	}
 
-    bzero(buffer, sizeof(buffer));
+	bzero(buffer, sizeof(buffer));
 
-    printf("Buffer after bzero:\n");
-    for (i = 0; i < sizeof(buffer); i++)
-    {
-        printf("%d ", buffer[i]);
-    }
-    printf("\n");
+	printf("Buffer after bzero:\n");
+	for (i = 0; i < sizeof(buffer); i++)
+	{
+		printf("%d ", buffer[i]);
+	}
+	printf("\n");
 
-    return 0;
+	return (0);
 }*/

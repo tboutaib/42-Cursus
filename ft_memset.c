@@ -9,35 +9,27 @@
 /*   Updated: 2024/11/10 08:57:47 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>*/
-#include <stddef.h>
 
-void *memset(void *s, int c, size_t n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-        int i;
+	size_t	i;
 
-        i = 0;
-        while (i < n)
-        {
-                ((unsigned char *)s)[i] = c;
-                i++;
-        }
-        return (s);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = c;
+		i++;
+	}
+	return (s);
 }
- 
-/*int main()
+
+int main()
 {
-    char buffer[10];
-    int i;
+	int	 s = 5;
+	ft_memset(&s, 5, 2);
+	ft_memset(&s, 57, 1);
+	printf("%d\n", s);
 
-    memset(buffer, 'X', sizeof(buffer));
-
-    printf("Buffer after memset:\n");
-    for (i = 0; i < sizeof(buffer); i++)
-    {
-        printf("%c ", buffer[i]);
-    }
-    printf("\n");
-
-    return 0;
-}*/
+}

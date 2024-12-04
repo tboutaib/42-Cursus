@@ -10,11 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int isdigit(int c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-        if ( c >= '48' && c <= '57' )
-        {
-                return (1);
-        }
-        return (0);
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	return (0);
 }
+
+/* int main()
+{
+	 if (ft_isdigit('5') == 1)
+        printf("is digit!\n");
+    else
+        printf("machi digit!\n");
+    return (0);
+} */

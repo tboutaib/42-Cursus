@@ -10,13 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int isalpha(int c)
+int	ft_isalpha(int c)
 {
-        if ( c >= '65' && c <= '90' ) || ( c >= '97' && c <= '122' )
-        {
-                return (1);
-        }
-        return (0);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	{
+		return (1);
+	}
+	return (0);
 }
+
+/* int main()
+{
+    if (ft_isalpha('a') == 1)
+        printf("alphabet!\n");
+    else
+        printf("machi alphabet!\n");
+    return (0);
+} */
