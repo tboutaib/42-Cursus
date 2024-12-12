@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 08:58:07 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 14:58:10 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/11 17:04:32 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/11 17:04:32 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *str)
+void	ft_putchar(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	write(1, &c, 1);
 }
-/* int main()
+
+void	ft_putnbr(int nb)
 {
-    printf("%zu", ft_strlen("10000000149011611938476562500000000000000000000000"));
-    return 0;
-} */
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		 ft_putchar(nb + 48);
+}

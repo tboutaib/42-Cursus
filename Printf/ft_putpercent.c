@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printpercent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 08:58:07 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 14:58:10 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/10 17:35:45 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/10 17:35:45 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+void ft_putpercent(void) {
+    write(1, "%", 1);
 }
-/* int main()
-{
-    printf("%zu", ft_strlen("10000000149011611938476562500000000000000000000000"));
-    return 0;
-} */

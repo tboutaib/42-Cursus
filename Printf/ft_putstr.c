@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 08:58:07 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 14:58:10 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/11 17:04:45 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/11 17:04:45 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *str)
+void	ft_putstr(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
+	{
+		write (1, &str[i], 1);
 		i++;
-	return (i);
+	}
+    	
 }
-/* int main()
-{
-    printf("%zu", ft_strlen("10000000149011611938476562500000000000000000000000"));
-    return 0;
-} */

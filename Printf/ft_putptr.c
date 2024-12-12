@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 08:58:07 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 14:58:10 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/10 17:35:54 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/10 17:35:54 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+void ft_puthex(unsigned long num, char format);
 
-size_t	ft_strlen(const char *str)
+void ft_putptr(void *ptr) 
 {
-	size_t	i;
+    unsigned long address = (unsigned long)ptr;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+    write(1, "0x", 2);
+    ft_puthex(address, 'x');
 }
-/* int main()
-{
-    printf("%zu", ft_strlen("10000000149011611938476562500000000000000000000000"));
-    return 0;
-} */
