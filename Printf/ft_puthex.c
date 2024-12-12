@@ -14,8 +14,13 @@ void ft_puthex(unsigned int num, char format)
 {
     char *hex_digits;
 
-    hex_digits = (format == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
+    if (fornmat == 'X')
+        hex_digits = "0123456789ABCDEF";
+    else
+        hex_digits = "0123456789abcdef";
+
     if (num >= 16)
         ft_puthex(num / 16, format);
+        
     write(1, &hex_digits[num % 16], 1);
 }
