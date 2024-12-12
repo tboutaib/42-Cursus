@@ -17,19 +17,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-// Main printf function
+
 int     ft_printf(const char *format, ...);
-
-// Handlers for specific format specifiers
-int     handle_placeholder(char specifier, va_list args);
-
-// Format specifier functions
-int     ft_printchar(char c);
-int     ft_printstr(char *str);
-int     ft_printnum(int n);
-int     ft_printunsigned(unsigned int n);
-int     ft_printhex(unsigned int n, char format);
-int     ft_printptr(void *ptr);
-int     ft_printpercent(void);
+void    ft_putchar(char c);
+void    ft_putstr(char *str);
+void    ft_putnbr(int nb);
+void    ft_putunsigned(unsigned int n);
+void    ft_puthex(unsigned int num, char format);
+void    ft_putptr(void *ptr);
+void    ft_putpercent(void);
 
 #endif
