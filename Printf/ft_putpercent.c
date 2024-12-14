@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <ft_printf.h>
 
-void ft_putpercent(void) {
+void ft_putpercent(void) 
+{
     write(1, "%", 1);
 }

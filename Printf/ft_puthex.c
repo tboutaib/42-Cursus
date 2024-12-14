@@ -10,17 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_printf.h>
+
 void ft_puthex(unsigned int num, char format) 
 {
     char *hex_digits;
+    int len = 0;
 
+    if (format == '0')
+        return (write( 1, '0', 1));
     if (fornmat == 'X')
         hex_digits = "0123456789ABCDEF";
     else
         hex_digits = "0123456789abcdef";
 
     if (num >= 16)
-        ft_puthex(num / 16, format);
-        
-    write(1, &hex_digits[num % 16], 1);
+        len += ft_puthex(num / 16, format);
+
+    len += (1, &hex_digits[num % 16], 1);
+
+    return (len);
 }

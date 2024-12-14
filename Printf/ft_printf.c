@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 
 int ft_conversion(char specifier, va_list args) {
-    int count = 0;
+    int len = 0;
 
     if (specifier == 'c')
-        count += ft_putchar(va_arg(args, int));
+        len += ft_putchar(va_arg(args, int));
     else if (specifier == 's')
-        count += ft_putstr(va_arg(args, char *));
+        len += ft_putstr(va_arg(args, char *));
     else if (specifier == 'd' || specifier == 'i')
-        count += ft_putnbr(va_arg(args, int));
+        len += ft_putnbr(va_arg(args, int));
     else if (specifier == 'u')
-        count += ft_putunsigned(va_arg(args, unsigned int));
+        len += ft_putunsigned(va_arg(args, unsigned int));
     else if (specifier == 'x')
-        count += ft_puthex(va_arg(args, unsigned int), 'x');
+        len += ft_puthex(va_arg(args, unsigned int), 'x');
     else if (specifier == 'X')
-        count += ft_puthex(va_arg(args, unsigned int), 'X');
+        len += ft_puthex(va_arg(args, unsigned int), 'X');
     else if (specifier == 'p')
-        count += ft_putptr(va_arg(args, void *));
+        len += ft_putptr(va_arg(args, void *));
     else if (specifier == '%')
-        count += ft_putpercent();
+        len += ft_putpercent();
     else
-        count += ft_putchar(specifier); // For invalid specifiers, just print it.
+        len += ft_putchar(specifier); // For invalid specifiers, just print it.
 
-    return count;
+    return len;
 }
 
 
@@ -40,20 +40,20 @@ int ft_printf(const char *format, ...)
 {
     va_list args;
     int i = 0;
-    int count = 0;
+    int len = 0;
 
     va_start(args, format);
     while (format[i]) {
         if (format[i] == '%' && format[i + 1]) {
-            count += ft_conversion(format[i + 1], args);
+            len += ft_conversion(format[i + 1], args);
             i++; // Skip the specifier
         } else {
-            count += ft_putchar(format[i]);
+            len += ft_putchar(format[i]);
         }
         i++;
     }
     va_end(args);
-    return count;
+    return len;
 }
 
 /*int main() 

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 17:35:59 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/10 17:35:59 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/13 15:54:05 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/13 15:54:05 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_printf.h>
 
-void ft_putchar(char c);
+int ft_putunsigned(unsigned int n) {
+    char c;
+    int len = 0;
 
-void ft_putunsigned(unsigned int n) {
-    if (n >= 10)
-        ft_putunsigned(n / 10);
-    ft_putchar((n % 10) + '0');
+    if (n >= 10) {
+        len += ft_putunsigned(n / 10);
+    }
+    c = (n % 10) + '0';
+    len += write(1, &c, 1);
+
+    return len;
 }

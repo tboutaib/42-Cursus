@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_puthex(unsigned long num, char format);
+#include <ft_printf.h>
 
 void ft_putptr(void *ptr) 
 {
     unsigned long address = (unsigned long)ptr;
+    int len = 0;
 
-    write(1, "0x", 2);
-    ft_puthex(address, 'x');
+    len += write(1, "0x", 2);
+    len += ft_puthex(address, 'x');
+
+    return len;
 }
