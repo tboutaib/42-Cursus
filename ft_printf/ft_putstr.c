@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 16:36:58 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 16:36:58 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/11 17:04:45 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/11 17:04:45 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write (1, &c, 1);
-	return (1);
+	int	len;
+	int	i;
+
+	len = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		len += ft_putchar(str[i]);
+		i++;
+	}
+	return (len);
 }

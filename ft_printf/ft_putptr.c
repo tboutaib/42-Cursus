@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 17:04:45 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/11 17:04:45 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/10 17:35:54 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/17 17:19:10 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
-void	ft_putstr(char *str)
+void	ft_putptr(void *ptr)
 {
-	int len = 0;
-	int	i;
+	unsigned long	address;
+	int				len;
 
-	i = 0
-	while (str[i] != '\0')
-	{
-		len += ft_putchar(str[i]);
-		i++;
-	}
-    return (len);
+	address = (unsigned long)ptr;
+	len = 0;
+	len += write(1, "0x", 2);
+	len += ft_puthex(address, 'x');
+	return (len);
 }

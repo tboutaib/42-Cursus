@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 06:40:55 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/07 06:40:55 by tboutaib         ###   ########.fr       */
+/*   Created: 2024/12/13 15:54:05 by tboutaib          #+#    #+#             */
+/*   Updated: 2024/12/13 15:54:05 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putunsigned(unsigned int n)
+{
+	char	c;
+	int		len;
 
-
-int     ft_printf(const char *format, ...);
-void    ft_putchar(char c);
-void    ft_putstr(char *str);
-void    ft_putnbr(int nb);
-void    ft_putunsigned(unsigned int n);
-void    ft_puthex(unsigned int num, char format);
-void    ft_putptr(void *ptr);
-void    ft_putpercent(void);
-
-#endif
+	len = 0;
+	if (n >= 10)
+	{
+		len += ft_putunsigned(n / 10);
+	}
+	c = (n % 10) + '0';
+	len += write(1, &c, 1);
+	return (len);
+}
