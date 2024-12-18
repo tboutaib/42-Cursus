@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	unsigned long	address;
 	int				len;

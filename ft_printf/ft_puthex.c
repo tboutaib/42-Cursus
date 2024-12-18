@@ -12,20 +12,20 @@
 
 #include "ft_printf.h"
 
-void	ft_puthex(unsigned int num, char format)
+int	ft_puthex(unsigned int num, char format)
 {
 	int		len;
 	char	*hex_digits;
 
 	len = 0;
 	if (format == '0')
-		return (write(1, '0', 1));
-	if (fornmat == 'X')
+		return (write(1, "0", 1));
+	if (format == 'X')
 		hex_digits = "0123456789ABCDEF";
 	else
 		hex_digits = "0123456789abcdef";
 	if (num >= 16)
 		len += ft_puthex(num / 16, format);
-	len += (1, &hex_digits[num % 16], 1);
+	len += write(1, &hex_digits[num % 16], 1);
 	return (len);
 }

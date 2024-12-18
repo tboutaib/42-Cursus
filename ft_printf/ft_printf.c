@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
 int	ft_conversion(char specifier, va_list args)
 {
 	int	len;

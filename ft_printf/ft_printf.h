@@ -17,13 +17,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putunsigned(unsigned int n);
-void	ft_puthex(unsigned int num, char format);
-void	ft_putptr(void *ptr);
-void	ft_putpercent(void);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int nb);
+int	ft_putunsigned(unsigned int n);
+int	ft_puthex(unsigned int num, char format);
+int	ft_putptr(void *ptr);
+int	ft_putpercent(void);
 
 #endif
