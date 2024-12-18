@@ -6,7 +6,7 @@
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:36:13 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/17 17:19:35 by tboutaib         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:35:20 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_puthex(unsigned int num, char format)
 	char	*hex_digits;
 
 	len = 0;
-	if (format == '0')
+	if (num == 0)
 		return (write(1, "0", 1));
 	if (format == 'X')
 		hex_digits = "0123456789ABCDEF";
