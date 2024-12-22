@@ -6,7 +6,7 @@
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 02:47:03 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/22 21:46:40 by tboutaib         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:58:34 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int	ft_conversion(char specifier, va_list args)
 		len += ft_putptr(va_arg(args, void *));
 	else if (specifier == '%')
 		len += ft_putpercent();
-	else if
-		len += ft_putchar(specifier);
 	else
 		return (-1);
 	return (len);
@@ -67,16 +65,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
-
-/*int main()
-{
-	ft_printf("String: %s\n", "Hello, 1337!");
-	ft_printf("Character: %c\n", 'A');
-	ft_printf("Integer: %d\n", 1337);
-	ft_printf("Unsigned: %u\n", 1337);
-	ft_printf("Hexadecimal (lowercase): %x\n", 1337);
-	ft_printf("Hexadecimal (uppercase): %X\n", 1337);
-	ft_printf("Pointer: %p\n", (void *)main);
-	ft_printf("Percent sign: %%\n");
-	return (0);
-}*/
