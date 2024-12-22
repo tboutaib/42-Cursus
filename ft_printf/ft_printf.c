@@ -6,7 +6,7 @@
 /*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 02:47:03 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/06 02:47:03 by tboutaib         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:46:40 by tboutaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ int	ft_conversion(char specifier, va_list args)
 		len += ft_putptr(va_arg(args, void *));
 	else if (specifier == '%')
 		len += ft_putpercent();
-	else
+	else if
 		len += ft_putchar(specifier);
+	else
+		return (-1);
 	return (len);
 }
 
@@ -46,6 +48,8 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
+	if (!format)
+		return (-1);
 	va_start(args, format);
 	while (format[i])
 	{
