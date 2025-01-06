@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: fekakelw7ayle <fekakelw7ayle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 02:08:52 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/14 02:08:52 by tboutaib         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:05:07 by fekakelw7ay      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_strlen(const char *str)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	if (!str)
 		return (0);
 	while (str[i])
@@ -28,11 +29,11 @@ char	*ft_strdup(const char *src)
 	char	*dup;
 	int		i;
 
-	if(!src)
+	if (!src)
 		return (NULL);
 	dup = (char *)malloc(ft_strlen(src) + 1);
-	if(!dup)
-		return(NULL);
+	if (!dup)
+		return (NULL);
 	i = 0;
 	while (src[i])
 	{
@@ -46,16 +47,17 @@ char	*ft_strdup(const char *src)
 char	*ft_strjoin(char *s1, const char *s2)
 {
 	char	*res;
-	int		i = 0;
-	int		j = 0;
+	int		j;
+	int		i;
 
+	j = 0;
+	i = 0;
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
-
 	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 		return (NULL);

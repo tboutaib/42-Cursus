@@ -6,7 +6,7 @@
 /*   By: fekakelw7ayle <fekakelw7ayle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 02:42:02 by fekakelw7ay       #+#    #+#             */
-/*   Updated: 2025/01/04 03:06:53 by fekakelw7ay      ###   ########.fr       */
+/*   Updated: 2025/01/06 13:06:20 by fekakelw7ay      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ static char	*free_and_return(char **ptr)
 	}
 	return (NULL);
 }
+
 static char	*ft_new_line(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -65,8 +66,7 @@ static char	*ft_read_line(int fd, char *buffer)
 	return (buffer);
 }
 
-
-char *gget_line(char **buffer, char *new)
+char	*gget_line(char **buffer, char *new)
 {
 	char	*temp;
 	char	*new_buffer;
@@ -86,12 +86,13 @@ char *gget_line(char **buffer, char *new)
 	return (temp);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*buffer[1024];
-	char		*line = NULL;
+	char		*line;
 	char		*new_line_pos;
 
+	line = NULL;
 	if (fd == -1 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer[fd] = ft_read_line(fd, buffer[fd]);

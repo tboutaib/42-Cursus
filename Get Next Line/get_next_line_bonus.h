@@ -6,19 +6,19 @@
 /*   By: fekakelw7ayle <fekakelw7ayle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 02:41:53 by fekakelw7ay       #+#    #+#             */
-/*   Updated: 2025/01/04 03:09:56 by fekakelw7ay      ###   ########.fr       */
+/*   Updated: 2025/01/06 12:34:16 by fekakelw7ay      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+#  define BUFFER_SIZE 42
 # endif
 
 char	*ft_strjoin(char *s1, const char *s2);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboutaib <tboutaib@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: fekakelw7ayle <fekakelw7ayle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 02:08:57 by tboutaib          #+#    #+#             */
-/*   Updated: 2024/12/14 02:08:57 by tboutaib         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:05:46 by fekakelw7ay      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ static char	*free_and_return(char **ptr)
 	}
 	return (NULL);
 }
+
 static char	*ft_new_line(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -51,7 +52,8 @@ static char	*ft_read_line(int fd, char *buffer)
 	{
 		bytes_read = read(fd, temp_buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
-			return( free_and_return(&temp_buffer), free_and_return(&buffer), NULL);
+			return (free_and_return(&temp_buffer), free_and_return(&buffer),
+				NULL);
 		if (bytes_read == 0)
 			break ;
 		temp_buffer[bytes_read] = '\0';
@@ -63,8 +65,7 @@ static char	*ft_read_line(int fd, char *buffer)
 	return (buffer);
 }
 
-
-char *gget_line(char **buffer, char *new)
+char	*gget_line(char **buffer, char *new)
 {
 	char	*temp;
 	char	*new_buffer;
@@ -84,12 +85,13 @@ char *gget_line(char **buffer, char *new)
 	return (temp);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*buffer = NULL;
-	char		*line = NULL;
 	char		*new_line_pos;
+	char		*line;
 
+	line = NULL;
 	buffer = ft_read_line(fd, buffer);
 	if (!buffer)
 		return (NULL);
